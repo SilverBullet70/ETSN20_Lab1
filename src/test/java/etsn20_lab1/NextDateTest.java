@@ -84,7 +84,17 @@ public class NextDateTest {
 	}
 	
 	@Test
+	public void testIfDayIs31() {
+		assertEquals("4/1/2006", nd.run(3, 31, 2006));
+	}
+	
+	@Test
 	public void testIfDayMoreThan31() {
-		assertEquals("4/1/2006", nd.run(3, 32, 2006));
+		assertEquals("Invalid Input Date", nd.run(3, 32, 2006));
+	}
+	
+	@Test
+	public void testNextDateJuly() {
+		assertEquals("7/16/2006", nd.run(7, 15, 2006));
 	}
 }
